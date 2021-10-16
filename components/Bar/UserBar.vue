@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="sm" type="light" variant="light">
-      <b-img :src="user.avatar" />
+    <b-navbar toggleable="sm" class="user-bar__navbar">
+      <b-img width="40" :src="user.avatar" />
       <div>{{ user.pseudo }}</div>
-      <b-img :src="user.countryImage" />
+      <b-img width="40" :src="user.countryImage" class="rounded" />
       <!-- User Level -->
       <b-row>
         <b-col class="d-flex justify-content-center">
@@ -63,6 +63,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .user-bar {
+    &__navbar{
+      background: $blue;
+    }
+  }
 </style>

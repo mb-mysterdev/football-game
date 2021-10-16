@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-white">
     <user-bar :user="getUser" />
     <team-bar />
     <Nuxt />
@@ -22,6 +22,7 @@ export default {
 }
 
 </script>
+
 <style>
 body {
     background-image: url('https://www.ligue1.fr/-/media/Project/LFP/Ligue1/Images/Articles-Assests/2020/07/08/2021-calendrier-L1UE-desktop.jpg');
