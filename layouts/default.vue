@@ -1,17 +1,26 @@
 <template>
   <div>
-    <user-bar />
+    <user-bar :user="getUser" />
     <team-bar />
     <Nuxt />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import TeamBar from '~/components/Bar/TeamBar.vue'
 import UserBar from '~/components/Bar/UserBar.vue'
+
 export default {
-  components: { UserBar, TeamBar }
+  components: { UserBar, TeamBar },
+  computed: {
+    // rajouter les accesseurs dans `computed` avec l'opérateur de décomposition
+    ...mapGetters({
+      getUser: 'user/getUser'
+    })
+  }
 }
+
 </script>
 <style>
 body {
