@@ -4,32 +4,53 @@
       <div
         v-if="match.matchStatus === 'inProgress' && !loading"
       >
-        <div class="d-flex">
-          <div class="card bg-transparent" style="width: 15rem;">
-            <div style="height:14rem;width:14rem" class="d-flex justify-content-center">
-              <img :src="getTeam(match.team1).logo" class="card-img-top" style="height:11rem;width:11rem">
+        <b-row>
+          <b-col>
+            <div class="card bg-transparent" style="width: 15rem;">
+              <div style="height:14rem;width:14rem" class="d-flex justify-content-center">
+                <img :src="getTeam(match.team1).logo" class="card-img-top" style="height:11rem;width:11rem">
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <h5 class="card-title text-light">
+                  {{ getTeam(match.team1).name }}
+                </h5>
+              </div>
+              <div class="d-flex justify-content-center">
+                <span v-for="value in user.team.team_last_match" :key="value">
+                  <b-avatar v-if="!value" variant="danger" text="P" />
+                  <b-avatar v-if="value === 1" variant="warning" text="N" />
+                  <b-avatar v-if="value === 2" variant="success" text="V" />
+                </span>
+              </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title text-light">
-                {{ getTeam(match.team1).name }}
-              </h5>
+          </b-col>
+          <b-col class="white">
+            <h3>Next Match</h3>
+            <h3>{{ user.team.team_division.division_name }} / S{{ user.week }}</h3>
+            <div style="font-size:120px" :style="'color:'+user.team.team_division.division_second_color ">
+              VS
             </div>
-          </div>
-
-          <div class="white">
-            VS
-          </div>
-          <div class="card bg-transparent" style="width: 15rem;">
-            <div style="height:14rem;width:14rem" class="d-flex justify-content-center">
-              <img :src="getTeam(match.team2).logo" class="card-img-top" style="height:11rem;width:11rem">
+          </b-col>
+          <b-col>
+            <div class="card bg-transparent" style="width: 15rem;">
+              <div style="height:14rem;width:14rem" class="d-flex justify-content-center">
+                <img :src="getTeam(match.team2).logo" class="card-img-top" style="height:11rem;width:11rem">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-light">
+                  {{ getTeam(match.team2).name }}
+                </h5>
+              </div>
+              <div class="d-flex justify-content-center">
+                <span v-for="value in user.team.team_last_match" :key="value">
+                  <b-avatar v-if="!value" variant="danger" text="P" />
+                  <b-avatar v-if="value === 1" variant="warning" text="N" />
+                  <b-avatar v-if="value === 2" variant="success" text="V" />
+                </span>
+              </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title text-light">
-                {{ getTeam(match.team2).name }}
-              </h5>
-            </div>
-          </div>
-        </div>
+          </b-col>
+        </b-row>
         <div class="d-flex justify-content-center">
           <b-button @click="nextMatch(match,key)">
             NEXT MATCH
@@ -46,6 +67,15 @@
 <script>
 export default {
   middleware: 'test',
+  props: {
+    user: {
+      type: Object,
+      required: true,
+      default () {
+        return {}
+      }
+    }
+  },
   data () {
     return {
       loading: false,
