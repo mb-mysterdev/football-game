@@ -37,9 +37,18 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // scss
+    '@nuxtjs/style-resources'
   ],
-
+  bootstrapVue: {
+    icons: true
+  },
+  styleResources: {
+    scss: [
+      '~/assets/scss/main.scss'
+    ]
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
