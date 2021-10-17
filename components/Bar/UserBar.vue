@@ -1,32 +1,36 @@
 <template>
-  <div>
+  <div class="col-9">
     <b-navbar toggleable="sm" class="user-bar__navbar">
-      <b-img width="40" :src="user.avatar" />
-      <div>{{ user.pseudo }}</div>
-      <b-img width="40" :src="user.countryImage" class="rounded" />
+      <b-img width="40" :src="user.avatar" class="mr-2" />
+      <div class="mr-2">
+        {{ user.pseudo }}
+      </div>
+      <b-img width="40" :src="user.countryImage" class="rounded mr-3" />
       <!-- User Level -->
-      <b-row>
-        <b-col class="d-flex justify-content-center">
+      <div>
+        <b-col class="d-flex">
           <b-icon
+            class="mx-2"
             icon="bookmark-star-fill"
-          />{{ user.level }}
+          />
+          <div>{{ user.level }}</div>
         </b-col>
-        <b-col>
-          <b-progress :max="maxLevelPoints" height="2rem">
+        <b-col class="mr-5">
+          <b-progress :max="maxLevelPoints" height="1rem">
             <b-progress-bar
               :value="user.levelPoint"
               variant="success"
               animated
             >
-              <span>Semi-pro (<strong>{{ user.levelPoint.toFixed(0) }} / {{ maxLevelPoints.toFixed(0) }}</strong>)</span>
+              <span class="d-flex justify-content-center">Semi-pro (<strong>{{ user.levelPoint.toFixed(0) }} / {{ maxLevelPoints.toFixed(0) }}</strong>)</span>
             </b-progress-bar>
           </b-progress>
         </b-col>
-      </b-row>
+      </div>
       <!-- User Popularity -->
-      <b-row>
+      <b-row class="ml-1 col-4">
         <b-col>
-          <b-progress :max="maxLevelPoints" height="2rem">
+          <b-progress :max="maxLevelPoints" height="1rem">
             <b-progress-bar
               :value="user.levelPoint"
               variant="success"
