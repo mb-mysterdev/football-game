@@ -1,25 +1,95 @@
 <template>
-  <div>
-    <b-navbar toggleable="sm" type="light" variant="light">
-      <b-navbar-toggle target="nav-text-collapse" />
-
-      <b-navbar-brand>TeamBar</b-navbar-brand>
-
-      <b-collapse id="nav-text-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-text>Navbar text</b-nav-text>
-        </b-navbar-nav>
-      </b-collapse>
+  <div class="col-7">
+    <b-navbar toggleable="sm" class="rounded-1 team-bar__navbar">
+      <b-row>
+        <b-col class="d-flex">
+          <b-img
+            :src="team.team_logo"
+            style="width:28px;height:30px"
+            class="mr-1"
+          />
+          <div> {{ team.team_name }}</div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-img
+            style="width:28px;height:30px"
+            class="mr-1"
+            src="http://simpleicon.com/wp-content/uploads/cup.png"
+          />
+          <div>{{ team.team_ranking }}</div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-icon
+            style="width:28px;height:30px"
+            class="mr-1"
+            icon="cash"
+          />
+          <div>{{ team.team_funds }}</div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-icon
+            style="width:28px;height:30px"
+            class="mr-1"
+            icon="people-fill"
+          />
+          <div>
+            {{ team.team_supporters }}
+          </div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-img
+            src="https://cdn-icons-png.flaticon.com/512/88/88961.png"
+            style="width:28px;height:30px"
+            class="mr-1"
+          />
+          <div>
+            {{ team.team_staduim_capacity }}
+          </div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-img
+            src="https://cdn-icons-png.flaticon.com/512/88/88961.png"
+            style="width:28px;height:30px"
+            class="mr-1"
+          />
+          <div> {{ team.team_power }}</div>
+        </b-col>
+        /
+        <b-col class="d-flex">
+          <b-icon
+            style="width:28px;height:30px"
+            class="mr-1"
+            icon="lightning"
+          />
+          <div>{{ team.team_money_value }}</div>
+        </b-col>
+      </b-row>
     </b-navbar>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: {
+    team: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .team-bar {
+    &__navbar{
+      background: $blue-1;
+    }
+  }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="text-white">
-    <user-bar :user="getUser" />
-    <team-bar />
+    <b-row>
+      <user-bar :user="getUser" />
+      <team-bar :team="getTeam" />
+    </b-row>
     <Nuxt />
   </div>
 </template>
@@ -16,7 +18,8 @@ export default {
   computed: {
     // rajouter les accesseurs dans `computed` avec l'opérateur de décomposition
     ...mapGetters({
-      getUser: 'user/getUser'
+      getUser: 'user/getUser',
+      getTeam: 'user/getTeam'
     })
   }
 }

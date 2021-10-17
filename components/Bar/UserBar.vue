@@ -1,6 +1,6 @@
 <template>
-  <div class="col-9">
-    <b-navbar toggleable="sm" class="user-bar__navbar">
+  <div class="col-6">
+    <b-navbar toggleable="sm" class="user-bar__navbar rounded-1">
       <b-img width="40" :src="user.avatar" class="mr-2" />
       <div class="mr-2">
         {{ user.pseudo }}
