@@ -1,6 +1,6 @@
 <template>
   <div class="text-white">
-    <b-row>
+    <b-row class="justify-content-center">
       <user-bar :user="getUser" />
       <team-bar :team="getTeam" />
     </b-row>

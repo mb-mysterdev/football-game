@@ -1,8 +1,8 @@
 <template>
-  <div class="col-7">
-    <b-navbar toggleable="sm" class="rounded-1 team-bar__navbar">
+  <div class="col-8">
+    <b-navbar toggleable="sm" class="rounded-1 team-bar__navbar justify-content-center">
       <b-row>
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-img
             :src="team.team_logo"
             style="width:28px;height:30px"
@@ -11,7 +11,7 @@
           <div> {{ team.team_name }}</div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-img
             style="width:28px;height:30px"
             class="mr-1"
@@ -20,7 +20,7 @@
           <div>{{ team.team_ranking }}</div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-icon
             style="width:28px;height:30px"
             class="mr-1"
@@ -29,7 +29,7 @@
           <div>{{ team.team_funds }}</div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-icon
             style="width:28px;height:30px"
             class="mr-1"
@@ -40,7 +40,7 @@
           </div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-img
             src="https://cdn-icons-png.flaticon.com/512/88/88961.png"
             style="width:28px;height:30px"
@@ -51,7 +51,7 @@
           </div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-img
             src="https://cdn-icons-png.flaticon.com/512/88/88961.png"
             style="width:28px;height:30px"
@@ -60,7 +60,7 @@
           <div> {{ team.team_power }}</div>
         </b-col>
         /
-        <b-col class="d-flex">
+        <b-col class="d-flex p-0 px-2">
           <b-icon
             style="width:28px;height:30px"
             class="mr-1"
