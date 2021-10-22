@@ -113,9 +113,3 @@ export const getters = {
     return state.user.division
   }
 }
-
-export const mutations = {
-  update (state, payload) {
-    state.user = payload
-  }
-}
